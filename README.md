@@ -1,6 +1,20 @@
 
 # 『安全开发教程』年轻人的第一款弱口令扫描器(x-crack)
 
+## usage
+
+```
+x-crack scan -i iplist.txt -u user.txt -p pass.txt -t 15
+
+[0000]  INFO xsec crack: checking ip active
+Checking progress:  [100.00%] [5/5]
+[0000]  INFO xsec crack: Ip: x.x.x.211, Port: 22, Protocol: [SSH], Username: admin, Password: admin
+[0000]  INFO xsec crack: Ip: x.x.x.9, Port: 22, Protocol: [SSH], Username: root, Password: 123456
+[0000]  INFO xsec crack: Ip: x.x.x.56, Port: 22, Protocol: [SSH], Username: root, Password: 123456
+[0000]  INFO xsec crack: Ip: x.x.x.236, Port: 22, Protocol: [SSH], Username: admin, Password: 123456
+[0001]  INFO xsec crack: Ip: x.x.x.134, Port: 22, Protocol: [SSH], Username: admin, Password: 123456
+```
+
 ## 概述
 
 我们在做企业安全时，弱口令检测是系统/网络安全的最基础的部分之一，根据经验，经常会出现弱口令的服务如下：
