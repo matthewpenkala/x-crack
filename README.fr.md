@@ -68,7 +68,7 @@ type IpAddr struct {
 
 ### Module de numérisation FTP
 
-Le langage go dispose d'un module FTP tout prêt, on retrouve directement celui qui a le plus d'étoiles`go get`Il suffit de l'installer et de l'utiliser :
+Le langage go dispose d'un module FTP tout prêt, on retrouve directement celui qui a le plus d'étoiles`go get`Il suffit de l'installer et de l'utiliser :
 
 ```bash
 go get -u github.com/jlaffaye/ftp
@@ -104,12 +104,12 @@ func ScanFtp(s models.Service) (err error, result models.ScanResult) {
 }
 ```
 
-每个连接需要设置超时时间，防止因网络问题导致的阻塞，我们打算通过程序的命令行来控制超时时间，所以定义了一个全局变量TimeOut。
-放在vars模块中的原因是防止放在这个模块中后会和其他模块互相调用导致的循环import
+Chaque connexion doit définir une période de temporisation pour éviter le blocage dû à des problèmes de réseau. Nous avons l'intention de contrôler la période de temporisation via la ligne de commande du programme, donc une variable globale TimeOut est définie.
+La raison de le placer dans le module vars est d'empêcher les importations circulaires de s'appeler avec d'autres modules après avoir été placées dans ce module.
 
 Bien qu'il soit possible d'écrire du code en peu de temps, nous ne pouvons pas attendre que des dizaines de milliers de lignes soient écrites puis exécutées. Par exemple, notre objectif est de construire une voiture de luxe, nous ne pouvons pas attendre que toutes les pièces soient conçues. et installé avant de commencer le test de la voiture. , Le processus de développement correct consiste à tester en écrivant, non pas à attendre que la roue soit construite, mais à tester au stade des vis et des engrenages.
 
-Voici le code de test et le résultat de l'engrenage du plug-in d'analyse FTP.
+以下为FTP扫描插件这个齿轮的测试代码及结果。
 
 ```go
 package plugins_test
@@ -546,7 +546,7 @@ ok  	command-line-arguments	5.061s
 
 Les fonctions du plug-in de numérisation que nous avons écrites précédemment sont les mêmes, nous pouvons mettre ce groupe de fonctions dans une carte et appeler automatiquement différents plug-ins de numérisation selon différents protocoles pendant le processus de numérisation.
 
-以后新加的扫描插件，可以按这种方法直接注册。
+Les plug-ins de numérisation nouvellement ajoutés peuvent être enregistrés directement de cette manière.
 
 ```go
 
