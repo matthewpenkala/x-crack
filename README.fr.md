@@ -109,7 +109,7 @@ La raison de le placer dans le module vars est d'empêcher les importations circ
 
 Bien qu'il soit possible d'écrire du code en peu de temps, nous ne pouvons pas attendre que des dizaines de milliers de lignes soient écrites puis exécutées. Par exemple, notre objectif est de construire une voiture de luxe, nous ne pouvons pas attendre que toutes les pièces soient conçues. et installé avant de commencer le test de la voiture. , Le processus de développement correct consiste à tester en écrivant, non pas à attendre que la roue soit construite, mais à tester au stade des vis et des engrenages.
 
-以下为FTP扫描插件这个齿轮的测试代码及结果。
+Voici le code de test et le résultat de l'engrenage du plug-in d'analyse FTP.
 
 ```go
 package plugins_test
